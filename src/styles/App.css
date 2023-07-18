@@ -1,0 +1,15 @@
+.lmj-wrapper {
+  display: flex;
+}
+
+.lmj-30 {
+  width: 30%;
+}
+
+.lmj-70 {
+  width: 70%;
+}
+
+.lmj-header {
+  background-color: #faf3f0;
+}
