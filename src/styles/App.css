@@ -13,3 +13,9 @@
 .lmj-header {
   background-color: #faf3f0;
 }
+
+.lmj-recommandation {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+}

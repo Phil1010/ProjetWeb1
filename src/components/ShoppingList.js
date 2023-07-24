@@ -1,4 +1,5 @@
 import { plantList } from '../datas/plantList';
+import PlantItem from './PlantItem';
 import '../styles/ShoppingList.css';
 
 function ShoppingList() {
@@ -7,24 +8,28 @@ function ShoppingList() {
       acc.includes(plant.category) ? acc : acc.concat(plant.category),
     []
   );
-  const catAvecPlantes = (
-    <ul>
-      {categories.map((cat) => (
-        <li key={cat}>
-          {cat}
-          <ul>
-            {plantList
-              .filter((plant) => plant.category === cat)
-              .map((plant) => (
-                <li key={plant.id}>{plant.name}</li>
-              ))}
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
 
-  return <div className="lmj-shopping">Les catégories :{catAvecPlantes}</div>;
+  return (
+    <div className="lmj-shopping">
+      Voici les différentes catégories de plantes :
+      <ul>
+        {categories.map((cat) => (
+          <li key={cat}>{cat}</li>
+        ))}
+      </ul>
+      <ul className="lmj-plant-list">
+        {plantList.map(({ id, cover, name, water, light }) => (
+          <PlantItem
+            key={id}
+            cover={cover}
+            name={name}
+            water={water}
+            light={light}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default ShoppingList;
